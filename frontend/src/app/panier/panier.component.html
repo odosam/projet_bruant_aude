@@ -1,21 +1,24 @@
-<div *ngIf="panierItems$ | async as panierItems">
-    <div *ngIf="panierItems.length > 0; else emptyCart">
-      <div *ngFor="let item of panierItems">
-        <p><b>{{ item.produit.nom }}</b></p>
-        <p>Prix: {{ item.produit.prix }}€</p>
-        <p>Quantité: {{ item.quantity }}</p>
-        <div class="cart-item-actions">
-          <button (click)="AjoutPanier(item.produit)">+</button>
-          <button (click)="SupprPanier(item.produit)">-</button>
-        </div>
+<main>
+  <h2>Votre Panier</h2>
+  <div *ngIf="panierItems$ | async as panierItems">
+      <div *ngIf="panierItems.length > 0; else emptyCart">
+          <div *ngFor="let item of panierItems" class="cart-item">
+              <div class="cart-item-info">
+                  <p class="item-name"><b>{{ item.produit.nom }}</b></p>
+                  <p>Prix: <span class="item-price">{{ item.produit.prix }}€</span></p>
+                  <p>Quantité: <span class="item-quantity">{{ item.quantity }}</span></p>
+              </div>
+              <div class="cart-item-actions">
+                  <button (click)="AjoutPanier(item.produit)" class="btn-add">+</button>
+                  <button (click)="SupprPanier(item.produit)" class="btn-remove">-</button>
+              </div>
+          </div>
+          <div class="panier-total">
+              <p>Total: <span>{{ getTotal(panierItems) }}€</span></p>
+          </div>
       </div>
-      
-      <div class="panier-total">
-        <p>Total: {{ getTotal(panierItems) }}€</p>
-      </div>
-    </div>
   </div>
   <ng-template #emptyCart>
-    <p>Votre panier est vide.</p>
+      <p class="empty-message">Votre panier est vide.</p>
   </ng-template>
-  
+</main>

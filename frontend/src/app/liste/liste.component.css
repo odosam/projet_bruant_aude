@@ -1,6 +1,6 @@
 /* Style global pour le conteneur des produits */
 body {
-    background-color: white;
+    background-color: #1a0124;
 }
 div {
     display: flex;                /* Alignement horizontal avec flexbox */

@@ -57,7 +57,7 @@ nav a:hover, nav a.active-link {
 }
 
 /* Cart count aligné à droite */
-.cart-count {
+.sign-in {
     position: absolute; /* Position relative à la nav-container */
     right: 20px; /* Tout à droite */
     background-color: #7c4dff; /* Violet vif pour le fond */
@@ -71,7 +71,7 @@ nav a:hover, nav a.active-link {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.cart-count:hover {
+.sign-in:hover {
     background-color: #9a67ea; /* Violet plus clair au survol */
     transform: scale(1.05); /* Zoom léger */
 }
