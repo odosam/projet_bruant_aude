@@ -10,9 +10,9 @@
   /* Carte d'un produit */
   .product-card {
     background-color: #1a0124; /* Fond foncé (équivalent de #0d0017) */
-    border: 1px solid #f4b6c2; /* Bordure rose pastel */
+    border: 1px solid #7c4dff4b; /* Bordure rose pastel */
     border-radius: 8px; /* Coins arrondis */
-    width: 250px; /* Largeur de chaque carte */
+    width: 300px; /* Largeur de chaque carte */
     padding: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour la carte */
@@ -22,12 +22,13 @@
   /* Zoom sur la carte au survol */
   .product-card:hover {
     transform: scale(1.05);
+    /* border-color: #9a67ea; */
   }
   
   /* Image du produit */
   .product-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover; /* Couvre l'espace sans déformer l'image */
     border-radius: 8px;
     margin-bottom: 15px;
@@ -41,20 +42,20 @@
   .product-name {
     font-size: 18px;
     font-weight: bold;
-    color: #e5989b; /* Rose pastel accentué pour le nom */
+    color: #b388ff; /* Rose pastel accentué pour le nom */
     margin-bottom: 10px;
   }
   
   .product-price {
     font-size: 16px;
-    color: #f4978e; /* Rose pastel soutenu pour le prix */
+    color: #b388ff; /* Rose pastel soutenu pour le prix */
     margin-bottom: 15px;
   }
   
   /* Style du bouton "Ajouter au panier" */
   .product-add-to-cart {
     padding: 10px 15px;
-    background-color: #e5989b; /* Fond rose pastel clair pour le bouton */
+    background-color: #b388ff; /* Fond rose pastel clair pour le bouton */
     color: white;
     border: none;
     border-radius: 5px;
@@ -65,7 +66,7 @@
   
   /* Changer la couleur du bouton au survol */
   .product-add-to-cart:hover {
-    background-color: #f4978e; /* Rose plus foncé au survol */
+    background-color: #7c4dff; /* Rose plus foncé au survol */
   }
   
   /* Responsive pour les petits écrans */

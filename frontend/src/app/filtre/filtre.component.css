@@ -29,7 +29,7 @@
   input {
     padding: 8px; /* Espacement interne */
     font-size: 14px; /* Taille du texte */
-    border: 1px solid #7c4dff; /* Bordure violette vive */
+    border: 1px solid #7c4dff4b; /* Bordure violette vive */
     border-radius: 5px; /* Coins arrondis */
     background-color: #1a0124; /* Fond sombre */
     color: #dcd6f7; /* Texte clair */
