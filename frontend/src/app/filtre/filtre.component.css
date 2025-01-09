@@ -1,54 +1,61 @@
-/* Container qui contient les filtres, alignement en flex pour les labels */
-label {
-    display: inline-block;
-    width: 45%; /* Largeur pour que les filtres se tiennent l'un à côté de l'autre */
-    margin: 10px 2%; /* Marges entre les filtres */
+/* Conteneur des champs de recherche */
+.search-container {
+    display: flex;
+    justify-content: center; /* Aligne les champs au centre */
+    gap: 20px; /* Espacement entre les champs */
+    margin: 20px; /* Espacement général */
+    flex-wrap: wrap; /* Permet de s'adapter aux petits écrans */
+  }
+  
+  /* Label des champs */
+  label {
+    display: flex;
+    flex-direction: column; /* Met le texte et l'input en colonne */
+    width: 250px; /* Largeur réduite des champs */
     font-family: 'Arial', sans-serif;
     font-size: 14px;
-    color: #6d6875; /* Texte gris-rose doux */
-}
-
-/* Stylisation du texte de label */
-label span {
-    display: block;
-    margin-bottom: 5px;
-    color: #e5989b; /* Rose pastel accentué */
+    color: #dcd6f7; /* Texte pastel clair */
+  }
+  
+  /* Texte des labels */
+  label span {
+    margin-bottom: 8px; /* Espacement entre le texte et l'input */
+    color: #7c4dff; /* Violet vif */
     font-weight: bold;
-}
-
-/* Stylisation des champs input */
-input {
-    width: 100%; /* Occupe toute la largeur du label */
+    font-size: 15px;
+  }
+  
+  /* Champ de saisie */
+  input {
     padding: 8px; /* Espacement interne */
-    border: 1px solid #f4b6c2; /* Bordure rose pastel */
+    font-size: 14px; /* Taille du texte */
+    border: 1px solid #7c4dff; /* Bordure violette vive */
     border-radius: 5px; /* Coins arrondis */
-    font-size: 14px;
-    background-color: #f8f0f1; /* Fond rose pastel très clair */
-    color: #6d6875; /* Texte gris-rose doux */
-    transition: border 0.3s ease, background-color 0.3s ease;
-}
-
-/* Ajouter un effet au survol et au focus des inputs */
-input:focus {
-    outline: none;
-    border-color: #e5989b; /* Rose pastel accentué */
-    background-color: #fce4ec; /* Fond rose très léger */
-}
-
-/* Ajouter un effet hover sur les champs de saisie */
-input:hover {
-    border-color: #e5989b; /* Rose pastel accentué lors du survol */
-}
-
-/* Responsivité : sur un écran plus petit, les filtres s'empilent */
-@media (max-width: 768px) {
+    background-color: #1a0124; /* Fond sombre */
+    color: #dcd6f7; /* Texte clair */
+    transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Effets au focus */
+  input:focus {
+    outline: none; /* Retire la bordure par défaut */
+    border-color: #e0b3ff; /* Bordure violet clair */
+    box-shadow: 0 0 5px #e0b3ff; /* Glow violet autour du champ */
+    background-color: #2a0135; /* Fond légèrement éclairci */
+  }
+  
+  /* Effets au survol */
+  input:hover {
+    border-color: #9a67ea; /* Bordure violet intermédiaire */
+  }
+  
+  /* Responsivité pour les petits écrans */
+  @media (max-width: 768px) {
     label {
-        width: 100%; /* Les labels prennent toute la largeur */
+      width: 100%; /* Les labels occupent toute la largeur */
     }
-}
-
-/* Mode clair pour le fond général */
-body {
-    background-color: #fff; /* Fond blanc pour le mode clair */
-    color: #6d6875; /* Texte gris-rose doux */
-}
+    .search-container {
+      gap: 15px; /* Réduction de l'espacement pour les petits écrans */
+    }
+  }
+  

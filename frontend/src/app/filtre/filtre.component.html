@@ -1,8 +1,11 @@
-<label>
-    <span>Saisir un nom : </span>
-    <input type="text" [(ngModel)]="filtreNom" (input)="updateFilter()">
-</label>
-<label>
-    <span>Saisir un prix maximal : </span>
-    <input type="number" [(ngModel)]="filtrePrixMax" (input)="updateFilter()">
-</label>
+<div class="search-container">
+    <label>
+      <span>Saisir un nom :</span>
+      <input type="text" [(ngModel)]="filtreNom" (input)="updateFilter()">
+    </label>
+    <label>
+      <span>Saisir un prix maximal :</span>
+      <input type="number" [(ngModel)]="filtrePrixMax" (input)="updateFilter()">
+    </label>
+  </div>
+  
