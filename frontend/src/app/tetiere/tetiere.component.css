@@ -1,0 +1,68 @@
+/* Header en mode sombre */
+header {
+    background-color: #1a0124; /* Violet foncé pour le fond */
+    padding: 20px; /* Espacement général */
+    color: #dcd6f7; /* Texte violet pastel */
+    border-bottom: 2px solid #7c4dff; /* Ligne violet vif */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombre renforcée pour le mode sombre */
+    display: flex;
+    flex-direction: column; /* Organisation verticale */
+    align-items: center;
+}
+
+/* Logo centré au-dessus */
+.logo img {
+    max-width: 300px; /* Taille du logo */
+    height: auto;
+    margin-bottom: 15px; /* Espacement avec la navigation */
+}
+
+/* Container navigation + compteur */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Occupe toute la largeur pour positionner le compteur */
+    position: relative; /* Nécessaire pour positionner le compteur */
+}
+
+/* Navigation centrée */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espacement entre les liens */
+}
+
+/* Lien de navigation */
+nav a {
+    text-decoration: none;
+    color: #b388ff; /* Violet pastel doux */
+    font-size: 18px;
+    font-weight: 500; /* Texte légèrement plus épais */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover, nav a.active-link {
+    color: #e0b3ff; /* Violet clair lumineux pour le survol/actif */
+    transform: scale(1.1); /* Zoom léger pour l'interaction */
+}
+
+/* Cart count aligné à droite */
+.cart-count {
+    position: absolute; /* Position relative à la nav-container */
+    right: 20px; /* Tout à droite */
+    background-color: #7c4dff; /* Violet vif pour le fond */
+    color: #ffffff; /* Texte blanc pour un bon contraste */
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap; /* Empêcher le retour à la ligne */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-count:hover {
+    background-color: #9a67ea; /* Violet plus clair au survol */
+    transform: scale(1.05); /* Zoom léger */
+}

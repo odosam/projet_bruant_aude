@@ -1,0 +1,95 @@
+/* Fond général de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff; /* Fond blanc pour le mode clair */
+    color: #6d6875; /* Texte gris-rose doux */
+}
+
+/* Style pour le conteneur principal du panier */
+main {
+    padding: 30px 20px; /* Espacement autour du contenu */
+    background: #f8f0f1; /* Fond rose pastel très clair */
+    border-radius: 10px; /* Coins arrondis */
+    margin: 20px; /* Espacement autour du conteneur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour du conteneur */
+}
+
+/* Titre principal de la page */
+h2 {
+    font-size: 24px;
+    color: #e5989b; /* Rose pastel accentué */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Conteneur des articles du panier */
+div > div {
+    background: #f4b6c2; /* Fond rose pastel soutenu pour les articles */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #fff; /* Texte blanc */
+}
+
+/* Style pour chaque item du panier */
+div > div > p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #6d6875; /* Texte gris-rose doux */
+}
+
+/* Action des boutons d'ajout et suppression */
+.cart-item-actions {
+    margin-top: 10px;
+}
+
+.cart-item-actions button {
+    padding: 10px 15px;
+    background-color: #e5989b; /* Rose pastel accentué pour les boutons */
+    color: #fff; /* Texte blanc */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+/* Changer la couleur des boutons au survol */
+.cart-item-actions button:hover {
+    background-color: #f4978e; /* Rose plus foncé au survol */
+}
+
+/* Style du total du panier */
+.panier-total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #6d6875; /* Gris-rose doux */
+}
+
+/* Style du message "Panier vide" */
+#emptyCart p {
+    font-size: 18px;
+    text-align: center;
+    color: #e5989b; /* Rose pastel accentué */
+}
+
+/* Responsive : ajustements pour les petits écrans */
+@media (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    .cart-item-actions button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .panier-total {
+        text-align: center;
+    }
+}

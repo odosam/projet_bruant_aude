@@ -1,0 +1,54 @@
+/* Container qui contient les filtres, alignement en flex pour les labels */
+label {
+    display: inline-block;
+    width: 45%; /* Largeur pour que les filtres se tiennent l'un à côté de l'autre */
+    margin: 10px 2%; /* Marges entre les filtres */
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #6d6875; /* Texte gris-rose doux */
+}
+
+/* Stylisation du texte de label */
+label span {
+    display: block;
+    margin-bottom: 5px;
+    color: #e5989b; /* Rose pastel accentué */
+    font-weight: bold;
+}
+
+/* Stylisation des champs input */
+input {
+    width: 100%; /* Occupe toute la largeur du label */
+    padding: 8px; /* Espacement interne */
+    border: 1px solid #f4b6c2; /* Bordure rose pastel */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 14px;
+    background-color: #f8f0f1; /* Fond rose pastel très clair */
+    color: #6d6875; /* Texte gris-rose doux */
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+/* Ajouter un effet au survol et au focus des inputs */
+input:focus {
+    outline: none;
+    border-color: #e5989b; /* Rose pastel accentué */
+    background-color: #fce4ec; /* Fond rose très léger */
+}
+
+/* Ajouter un effet hover sur les champs de saisie */
+input:hover {
+    border-color: #e5989b; /* Rose pastel accentué lors du survol */
+}
+
+/* Responsivité : sur un écran plus petit, les filtres s'empilent */
+@media (max-width: 768px) {
+    label {
+        width: 100%; /* Les labels prennent toute la largeur */
+    }
+}
+
+/* Mode clair pour le fond général */
+body {
+    background-color: #fff; /* Fond blanc pour le mode clair */
+    color: #6d6875; /* Texte gris-rose doux */
+}

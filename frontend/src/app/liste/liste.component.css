@@ -1,0 +1,59 @@
+/* Style global pour le conteneur des produits */
+body {
+    background-color: white;
+}
+div {
+    display: flex;                /* Alignement horizontal avec flexbox */
+    justify-content: space-between; /* Espacement entre le nom, le prix et le bouton */
+    align-items: center;          /* Alignement centré verticalement */
+    margin-bottom: 20px;          /* Espacement entre chaque produit */
+    padding: 15px;                /* Espacement interne autour des éléments */
+    border: 1px solid #f4b6c2;    /* Bordure rose pastel */
+    border-radius: 8px;           /* Coins arrondis */
+    background-color: #f8f0f1;    /* Fond rose pastel très clair */
+    color: #6d6875;               /* Texte gris-rose doux */
+}
+
+/* Style pour le nom du produit */
+div > span.product-name {
+    font-size: 18px;              /* Taille de police du nom */
+    font-weight: bold;            /* Mettre le nom en gras */
+    color: #e5989b;               /* Rose pastel accentué pour le texte */
+}
+
+/* Style pour le prix du produit */
+div > span.product-price {
+    font-size: 16px;              /* Taille de police du prix */
+    color: #f4978e;               /* Rose pastel soutenu pour le prix */
+}
+
+/* Style pour le bouton "Ajouter au panier" */
+button.product-add-to-cart {
+    padding: 10px 15px;           /* Espacement interne du bouton */
+    font-weight: bold;
+    font-size: 16px;              /* Taille du texte du bouton */
+    background-color: #f4b6c2;    /* Fond rose pastel soutenu */
+    color: white;                 /* Texte du bouton en blanc */
+    border: none;                 /* Supprimer la bordure du bouton */
+    border-radius: 5px;           /* Coins arrondis */
+    cursor: pointer;              /* Curseur en forme de main */
+    transition: background-color 0.3s ease; /* Transition pour la couleur au survol */
+}
+
+/* Changer la couleur du bouton au survol */
+button.product-add-to-cart:hover {
+    background-color: #e5989b;    /* Rose pastel accentué au survol */
+}
+
+/* Style pour la mise en page responsive */
+@media (max-width: 600px) {
+    div {
+        flex-direction: column;  /* Disposer les éléments en colonne sur petits écrans */
+        align-items: flex-start; /* Aligner les éléments à gauche */
+    }
+
+    button.product-add-to-cart {
+        margin-top: 10px;        /* Ajouter un peu d'espace au-dessus du bouton */
+        width: 100%;             /* Le bouton prend toute la largeur disponible */
+    }
+}
