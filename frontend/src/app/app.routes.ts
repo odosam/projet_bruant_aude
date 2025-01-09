@@ -5,5 +5,6 @@ import { PanierComponent } from './panier/panier.component';
 export const routes: Routes = [
     {path : 'boutique' , component : BoutiqueComponent},
     {path : 'panier', component : PanierComponent},
+    //{path : 'connexion', component : ConnexionComponent},
     {path: '**', redirectTo: 'boutique'}
 ];

@@ -4,11 +4,14 @@
     </div>
     <div class="nav-container">
         <nav>
-            <a routerLink="/boutique" routerLinkActive="active-link">Boutique</a>
-            <a routerLink="/panier" routerLinkActive="active-link">Panier</a>
+            <a routerLink="/boutique" routerLinkActive="active-link">boutique</a>
+            <a routerLink="/panier" routerLinkActive="active-link">
+                panier <p class="item-count">({{ itemCount$ | async }})</p>
+            </a>
+            <a href="">connexion</a>
         </nav>
-        <span class="cart-count">
+        <!-- <span class="cart-count">
             Nombre d'articles : {{ itemCount$ | async }}
-        </span>
+        </span> -->
     </div>
 </header>

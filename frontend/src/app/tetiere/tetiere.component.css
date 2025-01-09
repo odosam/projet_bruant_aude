@@ -33,13 +33,22 @@ nav {
     gap: 25px; /* Espacement entre les liens */
 }
 
-/* Lien de navigation */
 nav a {
+    display: flex; /* Permet de mettre les éléments en ligne */
+    align-items: center; /* Aligne verticalement le texte et le paragraphe */
+    gap: 5px; /* Espacement léger entre le texte et le paragraphe */
     text-decoration: none;
     color: #b388ff; /* Violet pastel doux */
     font-size: 18px;
     font-weight: 500; /* Texte légèrement plus épais */
     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a p.item-count {
+    font-size: 14px; /* Taille légèrement plus petite */
+    
+    margin: 0; /* Enlève les marges par défaut */
+   
 }
 
 nav a:hover, nav a.active-link {
