@@ -1,4 +1,18 @@
-<div *ngFor="let item of produits">
+<!-- <div *ngFor="let item of produits">
     {{item.nom}} : {{item.prix}} €
     <button class="product-add-to-cart" (click)="AjoutPanier(item)">Ajouter au panier</button>
-</div>
+</div> -->
+<div class="product-list">
+    <div *ngFor="let item of produits" class="product-card">
+      <!-- Affichage de l'image du produit -->
+      <img src="{{item.imageUrl}}" alt="{{item.nom}}" class="product-image">
+      
+      <!-- Détails du produit -->
+      <div class="product-details">
+        <p class="product-name">{{item.nom}}</p>
+        <p class="product-price">{{item.prix}} €</p>
+        <!-- Bouton Ajouter au panier -->
+        <button class="product-add-to-cart" (click)="AjoutPanier(item)">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>

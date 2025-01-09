@@ -9,8 +9,10 @@ import { environment } from '../environments/environment';
 @Injectable()
 export class ApiService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {}
+
     public getProduits () : Observable<Produit[]> {
         return this.http.get<Produit[]>(environment.backend);
     }
+    
 }

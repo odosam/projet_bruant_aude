@@ -43,8 +43,9 @@ export class BoutiqueComponent implements OnInit {
     this.produitsList = this.produits.filter((produit)=>{
       let testNom = this.filtreNom? produit.nom.toLowerCase().includes(this.filtreNom.toLowerCase()) : true;
       let testPrix = this.filtrePrixMax !== null ? produit.prix <= this.filtrePrixMax : true;
+      let testMotsCles = this.filtreNom && produit.motsCles ? produit.motsCles.some((mot) => mot.toLowerCase().includes(this.filtreNom.toLowerCase())): true;
       
-      return testNom && testPrix ; 
+      return (testNom || testMotsCles) && testPrix; 
     });
   }
 

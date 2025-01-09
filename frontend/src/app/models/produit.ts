@@ -1,5 +1,7 @@
 export class Produit{
     ref : string = "No ref";
-    nom : String = "";
+    nom : string = "";
     prix : number = 0;
+    imageUrl : string = "";
+    motsCles : string[] = [];
 }
