@@ -1,8 +1,8 @@
 [
-    {"ref" : "p1", "nom":"Porsche GT3 RS","prix":200000},
-    {"ref" : "p2", "nom":"Honda Civic EG5","prix": 5000 },
-    {"ref" : "p3", "nom":"1000tipla","prix":4000000},
-    {"ref" : "p4", "nom":"Verre d'eau","prix":10},
-    {"ref" : "p5", "nom":"Antoine","prix":900000000000000}
+    {"ref" : "photo1", "nom":"Style ruthless","prix":50, "imageUrl": "assets/images/sr1.jpg", "motsCles": ["voiture", "nuit", "automobile"]},
+    {"ref" : "photo2", "nom":"Stye ruthless 2","prix": 30 ,  "imageUrl": "assets/images/sr3.jpg", "motsCles": ["mercedes","voiture", "nuit", "garage" , "automobile"]},
+    {"ref" : "photo3", "nom":"civic by night","prix":50,  "imageUrl": "assets/images/civic.jpg", "motsCles": ["honda", "voiture", "nuit", "automobile", "dehors"]},
+    {"ref" : "photo4", "nom":"Equip S1","prix" : 100,  "imageUrl": "assets/images/equipS1.jpg", "motsCles": ["Equip","jante", "interieur"]},
+    {"ref" : "photo5", "nom":"Style ruthless 3","prix":50 ,  "imageUrl": "assets/images/sr2.jpg", "motsCles": ["bmw","dehors","voiture", "nuit", "automobile"]}
 
   ]
