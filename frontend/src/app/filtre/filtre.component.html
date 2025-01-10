@@ -1,11 +1,9 @@
 <div class="search-container">
     <label>
-      <span>Saisir un nom :</span>
-      <input type="text" [(ngModel)]="filtreNom" (input)="updateFilter()">
+      <input type="text" [(ngModel)]="filtreNom" (input)="updateFilter()" placeholder="Mots clés : nuit, garage, extérieur ...">
     </label>
     <label>
-      <span>Saisir un prix maximal :</span>
-      <input type="number" [(ngModel)]="filtrePrixMax" (input)="updateFilter()">
+      <input type="number" [(ngModel)]="filtrePrixMax" (input)="updateFilter()" placeholder="Prix maximal : 30 - 100 €">
     </label>
   </div>
   

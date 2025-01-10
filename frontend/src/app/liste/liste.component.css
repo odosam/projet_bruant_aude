@@ -9,19 +9,19 @@
   
   /* Carte d'un produit */
   .product-card {
-    background-color: #1a0124; /* Fond foncé (équivalent de #0d0017) */
-    border: 1px solid #7c4dff4b; /* Bordure rose pastel */
+    /* background-color: #1a0124; /* Fond foncé (équivalent de #0d0017) */
+    /* border: 1px solid #7c4dff4b; Bordure rose pastel */ 
     border-radius: 8px; /* Coins arrondis */
     width: 400px; /* Largeur de chaque carte */
     padding: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour la carte */
-    transition: transform 0.3s ease; /* Effet de zoom au survol */
+    transition: transform 0.5s ease; /* Effet de zoom au survol */
   }
   
   /* Zoom sur la carte au survol */
   .product-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     /* border-color: #9a67ea; */
   }
   
@@ -62,11 +62,13 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px #e0b3ff;
   }
   
   /* Changer la couleur du bouton au survol */
   .product-add-to-cart:hover {
-    background-color: #7c4dff; /* Rose plus foncé au survol */
+    background-color: #936dfa; /* Rose plus foncé au survol */
+    
   }
   
   /* Responsive pour les petits écrans */

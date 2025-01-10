@@ -4,6 +4,7 @@
     justify-content: center; /* Aligne les champs au centre */
     gap: 20px; /* Espacement entre les champs */
     margin: 20px; /* Espacement général */
+    margin-top: 35px;
     flex-wrap: wrap; /* Permet de s'adapter aux petits écrans */
   }
   
@@ -31,7 +32,7 @@
     font-size: 14px; /* Taille du texte */
     border: 1px solid #7c4dff4b; /* Bordure violette vive */
     border-radius: 5px; /* Coins arrondis */
-    background-color: #1a0124; /* Fond sombre */
+    background-color: black;
     color: #dcd6f7; /* Texte clair */
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   }
@@ -41,7 +42,7 @@
     outline: none; /* Retire la bordure par défaut */
     border-color: #e0b3ff; /* Bordure violet clair */
     box-shadow: 0 0 5px #e0b3ff; /* Glow violet autour du champ */
-    background-color: #2a0135; /* Fond légèrement éclairci */
+    background-color: black; /* Fond légèrement éclairci */
   }
   
   /* Effets au survol */
