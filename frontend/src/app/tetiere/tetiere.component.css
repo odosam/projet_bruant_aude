@@ -1,9 +1,9 @@
 /* Header en mode sombre */
 header {
-    background-color: #1a0124; /* Violet foncé pour le fond */
+    /* background-color: #1a0124; Violet foncé pour le fond */
     padding: 20px; /* Espacement général */
     color: #dcd6f7; /* Texte violet pastel */
-    border-bottom: 2px solid #7c4dff4b; /* Ligne violet vif */
+    /* border-bottom: 2px solid #7c4dff4b; Ligne violet vif */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombre renforcée pour le mode sombre */
     display: flex;
     flex-direction: column; /* Organisation verticale */
@@ -15,7 +15,17 @@ header {
     max-width: 300px; /* Taille du logo */
     height: auto;
     margin-bottom: 15px; /* Espacement avec la navigation */
+    transition: transform 0.3s ease-in-out;
 }
+
+.logo img:hover {
+    transform: scale(1.01); 
+    
+}
+
+
+
+
 
 /* Container navigation + compteur */
 .nav-container {

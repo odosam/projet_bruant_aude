@@ -1,0 +1,70 @@
+/* Fond général du footer */
+.site-footer {
+    background-color: #0d0017; /* Fond sombre pour correspondre au site */
+    color: #f8f0f1; /* Texte clair pour contraster */
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Conteneur du footer */
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  /* Section individuelle du footer */
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 15px;
+  }
+  
+  /* Titres des sections */
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #e5989b; /* Rose pastel accentué */
+    border-bottom: 2px solid #f4b6c2; /* Légère ligne décorative */
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Texte */
+  .footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /* Liens */
+  .footer-section a {
+    color: #f4b6c2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section a:hover {
+    color: #e5989b;
+  }
+  
+  /* Liste des liens sociaux */
+  .social-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-links li {
+    margin: 5px 0;
+  }
+  
+  /* Bas du footer */
+  .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #f4b6c2;
+    padding-top: 10px;
+    margin-top: 20px;
+    color: #f8f0f1;
+  }
+  

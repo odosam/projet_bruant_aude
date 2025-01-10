@@ -1,9 +1,13 @@
 <header>
     <div class="logo">
-        <img src="assets/logo/d.png" alt="Logo">
+        <a routerLink="/accueil" routerLinkActive="active-link">
+            <img src="../../assets/logo/d.png" alt="Accueil">
+          </a>
+          
     </div>
     <div class="nav-container">
         <nav>
+            <a routerLink="/accueil" routerLinkActive="active-link">accueil</a>
             <a routerLink="/boutique" routerLinkActive="active-link">boutique</a>
             <a routerLink="/panier" routerLinkActive="active-link">
                 panier <p class="item-count">({{ itemCount$ | async }})</p>
