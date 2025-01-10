@@ -1,6 +1,6 @@
 /* Header en mode sombre */
 header {
-    /* background-color: #1a0124; Violet foncé pour le fond */
+    
     padding: 20px; /* Espacement général */
     color: #dcd6f7; /* Texte violet pastel */
     /* border-bottom: 2px solid #7c4dff4b; Ligne violet vif */
@@ -19,7 +19,7 @@ header {
 }
 
 .logo img:hover {
-    transform: scale(1.01); 
+    transform: scale(1.005); 
     
 }
 
