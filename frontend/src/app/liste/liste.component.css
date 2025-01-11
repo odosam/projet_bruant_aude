@@ -9,14 +9,12 @@
   
   /* Carte d'un produit */
   .product-card {
-    /* background-color: #1a0124; /* Fond foncé (équivalent de #0d0017) */
-    /* border: 1px solid #7c4dff4b; Bordure rose pastel */ 
-    border-radius: 8px; /* Coins arrondis */
+    border-radius: 8px; 
     width: 400px; /* Largeur de chaque carte */
     padding: 15px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour la carte */
-    transition: transform 0.5s ease; /* Effet de zoom au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.5s ease;
   }
   
   /* Zoom sur la carte au survol */
@@ -36,26 +34,26 @@
   
   /* Détails du produit (nom et prix) */
   .product-details {
-    color: #d3b6f4; /* Texte rose pastel pour la lisibilité sur fond foncé */
+    color: #d3b6f4;
   }
   
   .product-name {
     font-size: 18px;
     font-weight: bold;
-    color: #d3b6f4; /* Rose pastel accentué pour le nom */
+    color: #d3b6f4; 
     margin-bottom: 10px;
   }
   
   .product-price {
     font-size: 16px;
-    color: #d3b6f4; /* Rose pastel soutenu pour le prix */
+    color: #d3b6f4; 
     margin-bottom: 15px;
   }
   
   /* Style du bouton "Ajouter au panier" */
   .product-add-to-cart {
     padding: 10px 15px;
-    background-color: #b388ff; /* Fond rose pastel clair pour le bouton */
+    background-color: #b388ff; 
     color: black;
     border: none;
     border-radius: 5px;
@@ -67,7 +65,7 @@
   
   /* Changer la couleur du bouton au survol */
   .product-add-to-cart:hover {
-    background-color: #936dfa; /* Rose plus foncé au survol */
+    background-color: #936dfa; 
     
   }
   

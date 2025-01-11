@@ -41,4 +41,12 @@ export class PanierComponent {
     }
     return panierItems.reduce((total, item) => total + (item.produit.prix * item.quantity), 0);
   }
+
+  payerPanier() {
+    // Exemple d'alerte de confirmation
+    alert('Le paiement a été effectué !');
+
+    // Tu peux aussi rediriger l'utilisateur vers une page de paiement ici
+    // this.router.navigate(['/payment']);
+  }
 }

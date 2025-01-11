@@ -12,28 +12,28 @@
   label {
     display: flex;
     flex-direction: column; /* Met le texte et l'input en colonne */
-    width: 250px; /* Largeur réduite des champs */
+    width: 250px; 
     font-family: 'Arial', sans-serif;
     font-size: 14px;
-    color: #dcd6f7; /* Texte pastel clair */
+    color: #dcd6f7; 
   }
   
   /* Texte des labels */
   label span {
     margin-bottom: 8px; /* Espacement entre le texte et l'input */
-    color: #d5d4d6; /* Violet vif */
+    color: #d5d4d6; 
     font-weight: bold;
     font-size: 15px;
   }
   
   /* Champ de saisie */
   input {
-    padding: 8px; /* Espacement interne */
-    font-size: 14px; /* Taille du texte */
-    border: 1px solid #7c4dff4b; /* Bordure violette vive */
-    border-radius: 5px; /* Coins arrondis */
+    padding: 8px; 
+    font-size: 14px; 
+    border: 1px solid #7c4dff4b;
+    border-radius: 5px; 
     background-color: black;
-    color: #dcd6f7; /* Texte clair */
+    color: #dcd6f7; 
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   }
   

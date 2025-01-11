@@ -1,27 +1,17 @@
-/* Corps de la page */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #0d0017; /* Fond très sombre violet/noir */
-    color: #dcd6f7; /* Texte pastel clair */
-}
-
 /* Conteneur principal */
 main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background: #1a0124; /* Fond violet foncé pour le conteneur */
+    border: 1px solid #7c4dff4b;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre plus marquée */
     color: #dcd6f7; /* Texte pastel */
 }
 
 /* Titre principal */
 h2 {
     font-size: 28px;
-    color: #b388ff; /* Violet pastel accentué */
+    color: #b388ff; 
     text-align: center;
     margin-bottom: 20px;
 }
@@ -29,20 +19,29 @@ h2 {
 /* Article du panier */
 .cart-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #2d013d; /* Fond violet profond pour les articles */
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    color: #ffffff; /* Texte blanc */
+    align-items: center; 
+    margin-bottom: 20px;
+    border-bottom: 1px solid #7c4dff4b;
+    padding-bottom: 15px;
+    justify-content: space-between; /* Espacement entre l'image et les autres informations */
 }
 
-/* Informations sur l'article */
 .cart-item-info {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    flex-grow: 1; 
+}
+
+.cart-item-image {
+    width: 130px; /* Taille de l'image */
+    height: auto;
+    margin-right: 15px; /* Espacement entre l'image et les informations du produit */
+    border-radius: 8px; /* Ajouter un arrondi à l'image */
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column; /* Afficher le nom, prix et quantité en colonne */
 }
 
 .item-name {
@@ -58,6 +57,7 @@ h2 {
 /* Actions sur l'article */
 .cart-item-actions {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -73,7 +73,7 @@ h2 {
 }
 
 .cart-item-actions button:hover {
-    background-color: #9a67ea; /* Violet clair au survol */
+    background-color: #9a67ea; 
 }
 
 /* Total panier */
@@ -82,18 +82,18 @@ h2 {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    color: #dcd6f7; /* Texte pastel */
+    color: #dcd6f7;
 }
 
 .panier-total span {
-    color: #7c4dff; /* Accentuation violet vif */
+    color: #7c4dff; 
 }
 
 /* Message panier vide */
 .empty-message {
     text-align: center;
     font-size: 18px;
-    color: #9a67ea; /* Violet clair */
+    color: #9a67ea; 
 }
 
 /* Responsive */
@@ -119,4 +119,25 @@ h2 {
     .panier-total {
         text-align: center;
     }
+}
+
+/* Bouton Payer */
+.payment-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.payment-button .btn-pay {
+    padding: 10px 20px;
+    background-color: #1915fc;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button .btn-pay:hover {
+    background-color: #3532fc; 
 }
