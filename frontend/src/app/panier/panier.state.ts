@@ -1,6 +1,6 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { AjoutPanier, SupprPanier } from './panier.actions';
-import { Produit } from '../models/produit';
+import { Produit } from '../shared/model/produit';
 
 export interface PanierStateModel {
     items: { produit: Produit, quantity: number }[];

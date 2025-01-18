@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 
 
@@ -15,19 +16,21 @@ import { Router } from '@angular/router';
 export class ConnexionComponent {
 
   connexionForm : FormGroup;
-  email: string = '';
+  username: string = '';
   password: string = '';
+  errorMessage: string = ''
 
-  @Output() connexion = new EventEmitter<{ email : string ; password : string}>();
+  @Output() connexion = new EventEmitter<{ username : string ; password : string}>();
 
   constructor(
     private formBuilder : FormBuilder,
     private router : Router,
+    private authService : AuthService
     // private userService : UserService
 
   ){
     this.connexionForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     })
 
@@ -35,20 +38,24 @@ export class ConnexionComponent {
 
   onSubmit() {
     if (this.connexionForm.valid) {
-      console.log('Email:', this.email);
-      console.log('Mot de passe:', this.password);
-      // const {email,password} = this.connexionForm.value ;
 
-      // this.userService.login(email,password).subscribe(
-      //   (res: SigninResponse) => {
-      //     this.connexionForm.reset();
-      //     localStorage.setItem('token', res.accessToken);
-      //     this.router.navigate(['/userProfile']);
-      //   },
-      //   (err) => {
-      //     console.error(err);
-      //   }
-      // );
+      const { username, password } = this.connexionForm.value;
+
+      this.authService.login(username, password).subscribe({
+        next: (response) => {
+          // Stocker le token dans localStorage si la connexion réussit
+          localStorage.setItem('token', response.token);
+          this.connexionForm.reset();
+          this.router.navigate(['/accueil']);  // Rediriger vers le profil de l'utilisateur ou une page protégée
+        },
+        error: (err) => {
+          console.error('Erreur de connexion', err);
+        }
+      });
+
+      // console.log('Email:', this.username);
+      // console.log('Mot de passe:', this.password);
+  
     }
     else{
       console.log('Account is not valid');

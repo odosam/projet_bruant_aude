@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FiltreComponent } from '../filtre/filtre.component';
 import { ListeComponent } from '../liste/liste.component'; 
-import { Produit } from '../models/produit';
+import { Produit } from '../shared/model/produit';
 import { ApiService } from '../api.service';
 
 @Component({
