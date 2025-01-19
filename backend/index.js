@@ -1,32 +1,24 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require("cors");
-
-// const utilisateurRoutes = require('./routes/utilisateur.routes'); // Vérifiez le chemin du fichier
-// const catalogueRoutes = require('./routes/catalogue.routes');
-
+const cors = require('cors');
 const app = express();
-const port = 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+const corsOptions = {
+  origin: "*",
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  headers: 'Content-Type, Authorization',
+  exposedHeaders: 'Authorization',
+};
 
-// const corsOptions = {
-//     origin: "*",
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     headers: 'Content-Type, Authorization',
-//     exposedHeaders:'Authorization'
-// };
+const PORT = 3000;
+
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
 
 
-// app.use(cors(corsOptions));
-// app.use(express.json());
+require('./routes/productRoutes') (app);
+require('./routes/userRoutes') (app);
 
-// app.use(bodyParser.json());
-require("./routes/utilisateur.routes")(app);
-// app.use('/api/utilisateur', utilisateurRoutes); // Route pour les utilisateurs
-// app.use('/api/catalogue', catalogueRoutes);     // Route pour le catalogue
-
-app.listen(port, () => {
-    console.log(`Serveur démarré sur http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
