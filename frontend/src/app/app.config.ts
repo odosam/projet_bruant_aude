@@ -8,6 +8,7 @@ import { routes } from './app.routes';
 import { UserState } from './states/user.states';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
+
 export const appConfig: ApplicationConfig = {
     providers: [
         provideRouter(routes),

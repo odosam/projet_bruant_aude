@@ -5,11 +5,9 @@ import { Observable } from 'rxjs';
 import { PanierState } from '../states/panier.state';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from '@angular/router';
-import { ConnexionComponent } from '../connexion/connexion.component';
-
 @Component({
   selector: 'app-tetiere',
-  imports: [CommonModule, RouterModule, ConnexionComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './tetiere.component.html',
   styleUrl: './tetiere.component.css'
 })
