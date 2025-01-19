@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Produit } from '../models/produit';
+import { Produit } from '../shared/model/produit';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngxs/store';
 import { AjoutPanier } from '../panier/panier.actions';

@@ -1,0 +1,122 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  /* Conteneur principal */
+  main {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: black;
+    border: 1px solid #7c4dff4b;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Titre principal */
+  h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #b388ff;
+  }
+  
+  /* Conteneur du formulaire */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Groupe de champs */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Labels des champs */
+  label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #b388ff;
+  }
+  
+  /* Champs de saisie */
+  input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #7c4dff4b;
+    border-radius: 5px;
+    background-color: black;
+    color: #dcd6f7; 
+    transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+ 
+  }
+  
+  /* Effets au focus */
+  input:focus {
+    outline: none;
+    border-color: #e0b3ff; /* Couleur principale au focus */
+    box-shadow: 0 0 5px #e0b3ff;
+  }
+
+  input:hover {
+    border-color: #9a67ea; /* Bordure violet intermédiaire */
+  }
+  
+  /* Bouton de soumission */
+  .submit-btn {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #574dcb; /* Couleur légèrement plus foncée au survol */
+  }
+  
+  /* Message d'erreur */
+  .error {
+    font-size: 14px;
+    color: #ff5c5c;
+    margin-top: -10px;
+  }
+  
+  /* Message de succès */
+  .success {
+    font-size: 16px;
+    color: #28a745;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Adaptabilité pour petits écrans */
+  @media (max-width: 768px) {
+    main {
+      padding: 15px;
+    }
+  
+    input {
+      font-size: 14px;
+    }
+  
+    .submit-btn {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+  

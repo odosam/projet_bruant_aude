@@ -1,4 +1,4 @@
-import { Produit } from "../models/produit";
+import { Produit } from "../shared/model/produit";
 
 export class AjoutPanier {
     static readonly type = '[Panier] Ajouter'; 

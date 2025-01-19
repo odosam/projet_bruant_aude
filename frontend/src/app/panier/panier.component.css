@@ -1,7 +1,7 @@
 /* Conteneur principal */
 main {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 30px auto;
     padding: 20px;
     border: 1px solid #7c4dff4b;
     border-radius: 10px;

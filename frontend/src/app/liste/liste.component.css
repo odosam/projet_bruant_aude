@@ -2,7 +2,7 @@
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espacement entre les cartes */
+    gap: 20px; 
     justify-content: center;
     padding: 20px;
   }
@@ -10,69 +10,83 @@
   /* Carte d'un produit */
   .product-card {
     border-radius: 8px; 
-    width: 400px; /* Largeur de chaque carte */
+    width: 400px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.5s ease;
   }
   
-  /* Zoom sur la carte au survol */
   .product-card:hover {
     transform: scale(1.03);
+
     /* border-color: #9a67ea; */
+
+    .product-price {
+      font-size: 16px;
+      color: #d3b6f4; 
+      margin-bottom: 15px;
+    }
+
+    .product-add-to-cart {
+      padding: 5px 10px;
+      background-color: #b388ff; 
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 5px #e0b3ff;
+    }
+
+
   }
   
-  /* Image du produit */
   .product-image {
     width: 100%;
-    height: 400px;
-    object-fit: cover; /* Couvre l'espace sans déformer l'image */
+    height: 500px;
+    object-fit: cover; 
     border-radius: 8px;
     margin-bottom: 15px;
   }
   
-  /* Détails du produit (nom et prix) */
+  /* Détails du produit */
   .product-details {
     color: #d3b6f4;
+    font-style: italic;
   }
   
   .product-name {
     font-size: 18px;
     font-weight: bold;
     color: #d3b6f4; 
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .product-price {
     font-size: 16px;
-    color: #d3b6f4; 
+    color: #d3b6f400; 
     margin-bottom: 15px;
   }
   
-  /* Style du bouton "Ajouter au panier" */
+  /* Bouton "Ajouter au panier" */
   .product-add-to-cart {
-    padding: 10px 15px;
-    background-color: #b388ff; 
+    padding: 5px 10px;
+    background-color: #b488ff00; 
     color: black;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 0 5px #e0b3ff;
-  }
-  
-  /* Changer la couleur du bouton au survol */
-  .product-add-to-cart:hover {
-    background-color: #936dfa; 
     
   }
   
-  /* Responsive pour les petits écrans */
+  .product-add-to-cart:hover {
+    background-color: #936dfa; 
+  }
+  
+ 
   @media (max-width: 768px) {
     .product-card {
-      width: 100%; /* Les cartes prennent toute la largeur sur mobile */
+      width: 100%; 
     }
   }
   

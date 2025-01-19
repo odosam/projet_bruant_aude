@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { PanierState } from './panier.state';
-import { Produit } from '../models/produit';
+import { PanierState } from '../states/panier.state';
+import { Produit } from '../shared/model/produit';
 import { AjoutPanier, SupprPanier } from './panier.actions';
 import { CommonModule } from '@angular/common';
 

@@ -1,0 +1,73 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style principal */
+  main {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid #7c4dff4b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Titre */
+  h1 {
+    font-size: 24px;
+    color: #b388ff;
+    margin-bottom: 20px;
+  }
+  
+  /* Conteneur des informations */
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  /* Chaque champ du profil */
+  .profile-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border: 1px solid #7c4dff4b;
+    border-radius: 5px;
+    background-color: #7c4dff00;
+  }
+  
+  /* Labels et valeurs */
+  .profile-item label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .profile-item span {
+    color: #777;
+  }
+  
+  /* Bouton de modification */
+  .edit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #7c4dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: #9a67ea;
+  }
+  

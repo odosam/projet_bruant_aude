@@ -1,17 +1,51 @@
-
-<main>
+<!-- <main>
     <h2>Connexion</h2>
+    <p>Pas encore inscrit ? <a href="/inscription">Inscrivez-vous ici</a></p>
+
     <div class="login-container">
-        <form (submit)="onSubmit()" class="login-form">
+        <form [formGroup]="connexionForm" (ngSubmit)="onSubmit()" class="login-form">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email"name="email" required placeholder="Entrez votre email">
+                <input type="email" id="email" formControlName="email" required placeholder="Entrez votre email ou identifiant">
+                <div *ngIf="connexionForm.get('email')?.invalid && connexionForm.get('email')?.touched" class="error-message">
+                    L'email est requis et doit être valide.
+                </div>
             </div>
+
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
+                <input type="password" id="password" formControlName="password" required placeholder="Entrez votre mot de passe">
+                <div *ngIf="connexionForm.get('password')?.invalid && connexionForm.get('password')?.touched" class="error-message">
+                    Le mot de passe est requis et doit avoir au moins 6 caractères.
+                </div>
             </div>
-            <button type="submit" class="login-btn">Se connecter</button>
+
+            <button type="submit" [disabled]="connexionForm.invalid" class="login-btn">Se connecter</button>
         </form>
+        <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
     </div>
-</main>
+</main> -->
+<div *ngIf="!isAuthenticated">
+    <div class="auth">
+        <button (click)="toggleMode()" class="dontgotoline auth-switch">
+            Switch to {{ isRegisterMode ? 'Login' : 'Register' }}
+        </button>
+        <form (submit)="authenticate()" class = "auth-form">
+            <div *ngIf="isRegisterMode">
+                <input type="text" [(ngModel)]="username" name="username" placeholder="Username" required />
+            </div>
+            <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
+            <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required />
+            <button type="submit" class="auth-submit">{{ isRegisterMode ? 'Register' : 'Login' }}</button>
+        </form>
+        
+    </div>
+</div>
+
+<div *ngIf="isAuthenticated">
+    <div class="auth">
+        {{ displayUsername$ | async }}
+        <a routerLink="/account">Account</a>
+        <button (click)="logout()" class="auth-logout">Logout</button>
+    </div>
+</div>
