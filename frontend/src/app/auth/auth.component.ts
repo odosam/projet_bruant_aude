@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from '../api.service';
 import { Store } from '@ngxs/store';
@@ -95,4 +95,8 @@ logout() {
     localStorage.removeItem('refreshToken');
     alert('You have been logged out.');
 }
+
+
+
+
 }

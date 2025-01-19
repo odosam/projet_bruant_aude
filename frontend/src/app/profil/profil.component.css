@@ -1,73 +1,128 @@
-/* Style général */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Style principal */
+/* Conteneur principal */
+main {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #7c4dff4b;
+  border-radius: 10px;
+  color: #dcd6f7; /* Texte pastel */
+}
+
+/* Titre principal */
+h2, h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #b388ff;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+/* Texte centré */
+p {
+  text-align: center;
+}
+
+/* Liens */
+a {
+  text-decoration: none;
+}
+
+/* Conteneur des cartes bancaires */
+.card-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #1e1e2f; /* Fond sombre */
+  border: 1px solid #7c4dff4b;
+  border-radius: 8px;
+}
+
+/* Conteneur des cartes enregistrées */
+.card-display {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #7c4dff4b;
+  background-color: black; /* Fond sombre pour les cartes */
+  border-radius: 6px;
+  color: #dcd6f7; /* Texte pastel */
+}
+
+/* Boutons */
+button {
+  padding: 10px;
+  background-color: #7c4dff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #9a67ea;
+}
+
+/* Champs de formulaire */
+label {
+  color: white;
+  margin-bottom: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #dcd6f7;
+}
+
+label span {
+  margin-bottom: 8px; /* Espacement entre le texte et l'input */
+  color: #d5d4d6;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #7c4dff4b;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: black;
+  color: #dcd6f7;
+  transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #e0b3ff; /* Couleur principale au focus */
+  box-shadow: 0 0 5px #e0b3ff;
+}
+
+
+/* Boutons spécifiques */
+.card-btn {
+  margin-top: 10px;
+  background-color: #7c4dff;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.card-btn:hover {
+  background-color: #9a67ea;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
   main {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: black;
-    border-radius: 10px;
-    border: 1px solid #7c4dff4b;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+      padding: 15px;
   }
-  
-  /* Titre */
-  h1 {
-    font-size: 24px;
-    color: #b388ff;
-    margin-bottom: 20px;
+
+  .card-section {
+      padding: 10px;
   }
-  
-  /* Conteneur des informations */
-  .profile-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px 0;
+
+  button {
+      width: 100%;
   }
-  
-  /* Chaque champ du profil */
-  .profile-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 15px;
-    border: 1px solid #7c4dff4b;
-    border-radius: 5px;
-    background-color: #7c4dff00;
-  }
-  
-  /* Labels et valeurs */
-  .profile-item label {
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .profile-item span {
-    color: #777;
-  }
-  
-  /* Bouton de modification */
-  .edit-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #7c4dff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .edit-btn:hover {
-    background-color: #9a67ea;
-  }
-  
+}

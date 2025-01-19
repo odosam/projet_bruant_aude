@@ -1,0 +1,12 @@
+<div *ngIf="cards$ | async as cards; else noCards">
+    <div *ngFor="let card of cards; let i = index" class="card">
+      <h3>{{ card.cardName }}</h3>
+      <p>Card Number: {{ card.cardCode }}</p>
+      <p>Expiry: {{ card.cardExpiry }}</p>
+      <button (click)="deleteCard(i)">Delete</button>
+    </div>
+  </div>
+  <ng-template #noCards>
+    <p>No cards available.</p>
+  </ng-template>
+  

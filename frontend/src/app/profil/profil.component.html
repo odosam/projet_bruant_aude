@@ -1,46 +1,51 @@
-<!-- <main>
-    <h1>Profil utilisateur</h1>
-    <div class="profile-container">
-      <div class="profile-item">
-        <label>Nom :</label>
-        <span>{{ user.name }}</span>
-      </div>
-      <div class="profile-item">
-        <label>Email :</label>
-        <span>{{ user.email }}</span>
-      </div>
-      <div class="profile-item">
-        <label>Téléphone :</label>
-        <span>{{ user.phone }}</span>
-      </div>
-    </div>
-    <button class="edit-btn">Modifier mes informations</button>
-  </main>
-   -->
+<main>
+  <h1>Profil Utilisateur</h1>
 
-   <form *ngIf="!isEditing; else editTemplate">
-    <div>
+  <div class="profile-container">
+    <!-- Affichage des informations utilisateur -->
+    <form *ngIf="!isEditing; else editTemplate">
+      <div class="profile-item">
         <label>Email:</label>
         <input type="text" [value]="email" disabled />
-    </div>
-    <div>
+      </div>
+      <div class="profile-item">
         <label>Username:</label>
         <input type="text" [value]="username" disabled />
-    </div>
-    <button type="button" (click)="toggleEdit()">Edit</button>
-</form>
-
-<ng-template #editTemplate>
-    <form (submit)="saveChanges()">
-        <div>
-            <label>Email:</label>
-            <input type="text" [(ngModel)]="email" name="email" required />
-        </div>
-        <div>
-            <label>Username:</label>
-            <input type="text" [(ngModel)]="username" name="username" required />
-        </div>
-        <button type="submit">Save</button>
-        <button type="button" (click)="toggleEdit()">Cancel</button>
+      </div>
+      <button class="edit-btn" type="button" (click)="toggleEdit()">Modifier</button>
     </form>
-</ng-template>
+
+    <!-- Section des cartes bancaires -->
+    <div class="profile-item">
+      <h2>Vos Cartes Bancaires</h2>
+
+      <!-- Liste des cartes existantes -->
+      <div class="profile-item">
+        <h3>Cartes Enregistrées</h3>
+        <app-display-card></app-display-card>
+      </div>
+
+      <!-- Formulaire d'ajout d'une carte -->
+      <div class="profile-item">
+        <app-card-form></app-card-form>
+      </div>
+    </div>
+
+    <!-- Formulaire de modification des informations utilisateur -->
+    <ng-template #editTemplate>
+      <form (submit)="saveChanges()">
+        <div class="profile-item">
+          <label>Email:</label>
+          <input type="text" [(ngModel)]="email" name="email" required />
+        </div>
+        <div class="profile-item">
+          <label>Username:</label>
+          <input type="text" [(ngModel)]="username" name="username" required />
+        </div>
+        <button class="btn-changes" type="submit">Enregistrer</button>
+        <button class="btn-changes" type="button" (click)="toggleEdit()">Annuler</button>
+      </form>
+      
+    </ng-template>
+  </div>
+</main>

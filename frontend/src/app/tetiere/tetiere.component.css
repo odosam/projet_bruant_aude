@@ -78,10 +78,10 @@ nav a:hover, nav a.active-link {
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     white-space: nowrap; /* Empêcher le retour à la ligne */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* transition: background-color 0.3s ease, transform 0.3s ease; */
 }
 
-.sign-in:hover {
-    background-color: #9a67ea; /* Violet plus clair au survol */
-    transform: scale(1.05); /* Zoom léger */
-}
+/* .sign-in:hover {
+    background-color: #9a67ea;
+    transform: scale(1.05); 
+} */

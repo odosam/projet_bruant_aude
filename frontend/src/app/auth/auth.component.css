@@ -1,66 +1,29 @@
 /* Conteneur principal */
 main {
-    max-width: 400px;
+    max-width: 500px;
     margin: 30px auto;
     padding: 20px;
-   
     border: 1px solid #7c4dff4b;
     border-radius: 10px;
     color: #dcd6f7; /* Texte pastel */
 }
 
-
-
-/* Titre principal */
-h2 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #b388ff; 
-    
+p {
+    padding-top: 10px;
 }
 
-p{
-    text-align: center;
+
+/* On applique un effet au focus */
+input:focus {
+    outline: none;
+    border-color: #e0b3ff;
+    box-shadow: 0 0 5px #e0b3ff;
 }
 
-a{
-    text-decoration: none;
-
-
+/* Lorsque l'input est en hover (survol) */
+input:hover {
+    border-color: #9a67ea;
 }
-
-/* Article du panier */
-.login-container {
-    display: flex;
-    justify-content: center;
-    
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    
-    color: white;
-    margin-bottom: 5px;
-    font-family: 'Arial', sans-serif;
-    font-size: 14px;
-    color: #dcd6f7; 
-}
-
-label span {
-    margin-bottom: 8px; /* Espacement entre le texte et l'input */
-    color: #d5d4d6; 
-    font-weight: bold;
-    font-size: 15px;
-  }
 
 input {
     width: 100%;
@@ -68,7 +31,7 @@ input {
     border: 1px solid #7c4dff4b;
     font-size: 16px;
     border-radius: 5px;
-    background-color: black;
+    background-color: black !important;
     color: #dcd6f7; 
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 
@@ -84,23 +47,104 @@ input:hover {
     border-color: #9a67ea; /* Bordure violet intermédiaire */
   }
 
-.login-btn  {
+
+/* Authentification */
+.auth {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 8px 12px;
-    background-color: #7c4dff; /* Violet vif pour les boutons */
-    color: #ffffff; /* Texte blanc */
+}
+
+.auth-switch {
+    background-color: transparent;
+    border: none;
+    color: #7c4dff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.auth-switch:hover {
+    color: #9a67ea;
+}
+
+
+
+
+/* Formulaire d'authentification */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #7c4dff4b;
+    border-radius: 5px;
+    background-color: black;
+    color: #dcd6f7;
+    font-size: 16px;
+    transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #e0b3ff;
+    box-shadow: 0 0 5px #e0b3ff;
+}
+
+.auth-form button {
+    padding: 10px;
+    background-color: #7c4dff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.auth-form button:hover {
+    background-color: #9a67ea;
+}
+
+.auth-submit {
+    width: 100%;
+}
+
+
+/* Bouton de déconnexion */
+.auth-logout {
+    padding: 8px 16px;
+    background-color: #9e2c2c;
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.login-btn:hover {
-    background-color: #9a67ea; 
+.auth-logout:hover {
+    background-color: #ff1a1a;
 }
 
+/* Lien de profil */
+.auth a {
+    text-decoration: none;
+
+    color: #7c4dff;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.auth a:hover {
+    color: #9a67ea;
+}
 
 /* Responsive */
 @media (max-width: 600px) {
@@ -108,22 +152,11 @@ input:hover {
         padding: 15px;
     }
 
-    .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
+    .auth-form input {
+        font-size: 14px;
     }
 
-    .cart-item-actions {
-        justify-content: flex-start;
-        margin-top: 10px;
-    }
-
-    .cart-item-actions button {
-        width: 100%;
-    }
-
-    .panier-total {
-        text-align: center;
+    .auth-form button {
+        font-size: 14px;
     }
 }
-
