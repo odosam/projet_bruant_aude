@@ -6,7 +6,6 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { NgModule } from '@angular/core';
 import {  RouterModule } from '@angular/router';
 import { ProfilComponent } from './profil/profil.component';
-import { authGuard } from './auth.guard';
 import { InscriptionComponent } from './inscription/inscription.component';
 
 
@@ -15,11 +14,8 @@ export const routes: Routes = [
     {path : 'boutique' , component : BoutiqueComponent},
     {path : 'panier', component : PanierComponent},
     {path : 'connexion', component : ConnexionComponent},
-    // {path : 'profil', component : ProfilComponent, canActivate: [authGuard]},
     {path : 'profil', component : ProfilComponent},
     {path : 'inscription', component : InscriptionComponent},
-
-
     {path: '**', redirectTo: 'accueil'}
 ];
 

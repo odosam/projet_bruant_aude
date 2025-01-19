@@ -1,0 +1,129 @@
+/* Conteneur principal */
+main {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+   
+    border: 1px solid #7c4dff4b;
+    border-radius: 10px;
+    color: #dcd6f7; /* Texte pastel */
+}
+
+
+
+/* Titre principal */
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #b388ff; 
+    
+}
+
+p{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+
+
+}
+
+/* Article du panier */
+.login-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    
+    color: white;
+    margin-bottom: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #dcd6f7; 
+}
+
+label span {
+    margin-bottom: 8px; /* Espacement entre le texte et l'input */
+    color: #d5d4d6; 
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #7c4dff4b;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: black;
+    color: #dcd6f7; 
+    transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+input:focus {
+    outline: none;
+    border-color: #e0b3ff; /* Couleur principale au focus */
+    box-shadow: 0 0 5px #e0b3ff;
+}
+
+input:hover {
+    border-color: #9a67ea; /* Bordure violet intermédiaire */
+  }
+
+.login-btn  {
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #7c4dff; /* Violet vif pour les boutons */
+    color: #ffffff; /* Texte blanc */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-btn:hover {
+    background-color: #9a67ea; 
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    main {
+        padding: 15px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item-actions {
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .cart-item-actions button {
+        width: 100%;
+    }
+
+    .panier-total {
+        text-align: center;
+    }
+}
+
