@@ -1,6 +1,6 @@
 // Get all products
 module.exports = app => {
-  const productsController = require('../controllers/productController');
+  const productsController = require('../controllers/catalogue.controllers');
 
   let router = require('express').Router();
 
