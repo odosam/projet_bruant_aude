@@ -11,11 +11,7 @@
             <a routerLink="/boutique" routerLinkActive="active-link">boutique</a>
             <a routerLink="/panier" routerLinkActive="active-link">
                 panier <p class="item-count">({{ itemCount$ | async }})</p>
-            </a>
-
-            <!-- <a routerLink="/profil" routerLinkActive="active-link">profil</a> -->
-            
-            <!-- Liens de navigation visibles uniquement si l'utilisateur est connecté -->         
+            </a>      
         </nav>
         
         <ng-container *ngIf="isAuthenticated; else loggedOut">
@@ -23,9 +19,9 @@
             <a (click)="logout()" class="sign-out">se déconnecter</a>
         </ng-container>
 
-        <!-- Lien "connexion" si l'utilisateur n'est pas connecté -->
+        
         <ng-template #loggedOut>
-            <a routerLink="/connexion" routerLinkActive="active-link"><span class="sign-in">connexion</span></a>
+            <a routerLink="/connexion" routerLinkActive="active-link"><span class="sign-in">Profil</span></a>
         </ng-template>
     </div>
 </header>

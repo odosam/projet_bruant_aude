@@ -13,6 +13,6 @@ module.exports = (sequelize, Sequelize) => {
         pass: {
             type: Sequelize.STRING,
         }
-   });
-  return Utilisateurs;
+    });
+    return Utilisateurs;
   };

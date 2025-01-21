@@ -17,7 +17,6 @@ import { UserState } from '../states/user.states';
 })
 export class AuthComponent implements OnInit{
 
-  email = '';
   password = '';
   username = '';
   isRegisterMode = false;
@@ -27,8 +26,8 @@ export class AuthComponent implements OnInit{
   ngOnInit(): void {
     // Check if the user is already authenticated
     const accessToken = localStorage.getItem('accessToken');
-    const refreshToken = localStorage.getItem('refreshToken');
-    if (accessToken && refreshToken) {
+
+    if (accessToken) {
         this.apiService.getCurrentUser().subscribe(
             (user: any) => {
                 this.isAuthenticated = true;
@@ -50,8 +49,9 @@ toggleMode() {
 }
 
 authenticate() {
+    
     if (this.isRegisterMode) {
-        this.apiService.register(this.email, this.username, this.password).subscribe(
+        this.apiService.register( this.username, this.password).subscribe(
             (response) => {
                 console.log('Registered:', response);
                 alert('Registration successful! Please log in.');
@@ -61,7 +61,7 @@ authenticate() {
         );
     }
     else {
-        this.apiService.login(this.email, this.password).subscribe(
+        this.apiService.login( this.username, this.password).subscribe(
             (response: any) => {
                 console.log('Logged in:', response);
                 this.isAuthenticated = true;
@@ -69,7 +69,6 @@ authenticate() {
                 this.store.dispatch(new UpdateUsername(response.username));
                 // put the access token in the local storage
                 localStorage.setItem('accessToken', response.tokens.accessToken);
-                localStorage.setItem('refreshToken', response.tokens.refreshToken);
             },
             (error) => {
                 console.error('Error:', error);
@@ -83,11 +82,11 @@ authenticate() {
             }
         );
     }
+    
 }
 
 logout() {
     this.isAuthenticated = false;
-    this.email = '';
     this.password = '';
     this.username = '';
     this.store.dispatch(new UpdateUsername(''));

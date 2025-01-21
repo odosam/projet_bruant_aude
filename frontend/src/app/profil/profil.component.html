@@ -4,14 +4,8 @@
   <div class="profile-container">
     <!-- Affichage des informations utilisateur -->
     <form *ngIf="!isEditing; else editTemplate">
-      <div class="profile-item">
-        <label>Email:</label>
-        <input type="text" [value]="email" disabled />
-      </div>
-      <div class="profile-item">
         <label>Username:</label>
         <input type="text" [value]="username" disabled />
-      </div>
       <button class="edit-btn" type="button" (click)="toggleEdit()">Modifier</button>
     </form>
 
@@ -34,10 +28,6 @@
     <!-- Formulaire de modification des informations utilisateur -->
     <ng-template #editTemplate>
       <form (submit)="saveChanges()">
-        <div class="profile-item">
-          <label>Email:</label>
-          <input type="text" [(ngModel)]="email" name="email" required />
-        </div>
         <div class="profile-item">
           <label>Username:</label>
           <input type="text" [(ngModel)]="username" name="username" required />

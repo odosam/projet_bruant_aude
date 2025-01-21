@@ -20,7 +20,6 @@ import { UpdateUsername } from '../actions/user.actions';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-  email = '';
   username = '';
   isEditing = false;
 
@@ -33,7 +32,6 @@ export class ProfilComponent implements OnInit {
   loadUserInfo() {
     this.apiService.getCurrentUser().subscribe(
       (user: any) => {
-        this.email = user.email;
         this.username = user.username;
       },
       (error) => console.error('Error loading user info:', error)
@@ -41,7 +39,7 @@ export class ProfilComponent implements OnInit {
   }
 
   saveChanges() {
-    const updatedUser = { email: this.email, username: this.username };
+    const updatedUser = { username: this.username };
     this.apiService.updateUser(updatedUser).subscribe(
       (response) => {
         console.log('User updated successfully:', response);
