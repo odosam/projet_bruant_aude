@@ -6,15 +6,16 @@ import { DisplayCardComponent } from '../card/display-card/display-card.componen
 import { ApiService } from '../api.service';
 import { Store } from '@ngxs/store';
 import { UpdateUsername } from '../actions/user.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profil',
-  standalone: true, // Configuration standalone
+  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
-    CardFormComponent, // Importation du composant formulaire
-    DisplayCardComponent // Importation du composant d'affichage
+    CardFormComponent, 
+    DisplayCardComponent 
   ],
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.css']
@@ -23,7 +24,7 @@ export class ProfilComponent implements OnInit {
   username = '';
   isEditing = false;
 
-  constructor(private apiService: ApiService, private store: Store) {}
+  constructor(private apiService: ApiService, private store: Store, private router:Router) {}
 
   ngOnInit(): void {
     this.loadUserInfo();
@@ -42,7 +43,6 @@ export class ProfilComponent implements OnInit {
     const updatedUser = { username: this.username };
     this.apiService.updateUser(updatedUser).subscribe(
       (response) => {
-        console.log('User updated successfully:', response);
         alert('User information updated!');
         this.isEditing = false;
         this.store.dispatch(new UpdateUsername(this.username));
@@ -53,5 +53,10 @@ export class ProfilComponent implements OnInit {
 
   toggleEdit() {
     this.isEditing = !this.isEditing;
+  }
+
+  logout(){
+    localStorage.removeItem('accessToken');
+    this.router.navigate(['/connexion']);
   }
 }

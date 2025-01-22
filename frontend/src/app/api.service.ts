@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Produit } from './shared/model/produit';
 import { environment } from '../environments/environment';
+import { authResponse } from './auth/authResponse';
 
 @Injectable()
 export class ApiService {
@@ -18,9 +19,19 @@ export class ApiService {
       return this.http.post(environment.backendRegister, body);
     }
   
-    public login(username: string, password: string): Observable<any> {
-      const body = { login:username, pass:password  };
-      return this.http.post(environment.backendLogin, body);
+    public loginClient(login: string, password: string): Observable<authResponse> {
+      let data: String;
+      let httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+      };
+      data = 'login=' + login + '&password=' + password;
+      return this.http.post<authResponse>(
+        environment.backendLogin,
+        data,
+        httpOptions
+      );
     }
   
     public getCurrentUser(): Observable<any> {

@@ -15,12 +15,11 @@ export class InscriptionComponent {
   telephone: string = '';
   email: string = '';
   pwd: string = '';
-  confirmPwd: string = ''; // Nouveau champ pour la confirmation du mot de passe
+  confirmPwd: string = ''; 
   errorTxt: string = '';
   IsDiplay: boolean = false;
 
   check(): void {
-    // Vérification des champs obligatoires
     if (!this.prenom.trim()) {
       this.errorTxt = "Veuillez saisir un prénom.";
       return;
@@ -50,11 +49,9 @@ export class InscriptionComponent {
       return;
     }
 
-    // Si tout est correct
     this.errorTxt = '';
     this.IsDiplay = true;
 
-    // Affiche les informations (simule l'inscription)
     console.log('Utilisateur inscrit :', {
       prenom: this.prenom,
       nom: this.nom,
@@ -62,7 +59,6 @@ export class InscriptionComponent {
       email: this.email
     });
 
-    // Réinitialise les champs après affichage de succès
     this.resetForm();
   }
 

@@ -6,7 +6,7 @@ import { NgxsModule } from '@ngxs/store';
 import { PanierState } from './states/panier.state';
 import { routes } from './app.routes';
 import { UserState } from './states/user.states';
-import { AuthInterceptor } from './auth/auth.interceptor';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 export const appConfig: ApplicationConfig = {

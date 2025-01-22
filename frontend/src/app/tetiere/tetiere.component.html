@@ -12,16 +12,8 @@
             <a routerLink="/panier" routerLinkActive="active-link">
                 panier <p class="item-count">({{ itemCount$ | async }})</p>
             </a>      
+            <a (click)="goToProfile()">profil</a>
         </nav>
-        
-        <ng-container *ngIf="isAuthenticated; else loggedOut">
-            <a routerLink="/profil" routerLinkActive="active-link">profil</a>
-            <a (click)="logout()" class="sign-out">se déconnecter</a>
-        </ng-container>
 
-        
-        <ng-template #loggedOut>
-            <a routerLink="/connexion" routerLinkActive="active-link"><span class="sign-in">Profil</span></a>
-        </ng-template>
     </div>
 </header>

@@ -1,37 +1,44 @@
-<main>
-    <div *ngIf="!isAuthenticated">
-        <div class="auth">
-            <h2 *ngIf="!isRegisterMode">Connexion</h2>
-            <h2 *ngIf="isRegisterMode">Inscription</h2>
-    
-            
-            <p *ngIf="!isRegisterMode" class="register-text">
-                Vous êtes un nouvel utilisateur ? <a (click)="toggleMode()">Créez un compte</a>
-            </p>
-
-            <p *ngIf="isRegisterMode" class="register-text">
-                Vous avez déjà un compte ? <a (click)="toggleMode()">Connectez-vous</a>
-            </p>
-            
-            <form (submit)="authenticate()" class="auth-form">
-                <input type="text" [(ngModel)]="username" name="username" placeholder="Username" required />
-                <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required />
-                <button type="submit" class="auth-submit">{{ isRegisterMode ? 'Register' : 'Login' }}</button>
-            </form>
-    
-            
-        </div>
+<main class="auth-container">
+    <!-- Affichage des erreurs globales -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
     </div>
-    
-    <div *ngIf="isAuthenticated">
-        <div class="auth">
-            {{ displayUsername$ | async }}
-           <a routerLink="/profil">Accéder à mon profil</a>
-           <a routerLink="/profil">Accéder à mes cartes</a>
-            <button (click)="logout()" class="auth-logout">Se déconnecter</button>
-        </div>
-    </div>  
-
-</main>
-
-
+  
+    <form [formGroup]="loginUserForm" (ngSubmit)="submitForm()" novalidate class="auth-form">
+      <h2>Connexion</h2>
+  
+      <!-- Champ de login -->
+      <div class="form-group">
+        <label for="loginControl">Nom d'utilisateur</label>
+        <input
+          id="loginControl"
+          type="text"
+          formControlName="loginControl"
+          placeholder="Entrez votre nom d'utilisateur"
+          [class.invalid]="getControlName(loginUserForm, 'loginControl').invalid && alreadySubmitted"
+        />
+        <small class="error-text" *ngIf="getErrors('loginControl')">
+          {{ getErrors('loginControl') }}
+        </small>
+      </div>
+  
+      <!-- Champ de mot de passe -->
+      <div class="form-group">
+        <label for="passwordControl">Mot de passe</label>
+        <input
+          id="passwordControl"
+          type="password"
+          formControlName="passwordControl"
+          placeholder="Entrez votre mot de passe"
+          [class.invalid]="getControlName(loginUserForm, 'passwordControl').invalid && alreadySubmitted"
+        />
+        <small class="error-text" *ngIf="getErrors('passwordControl')">
+          {{ getErrors('passwordControl') }}
+        </small>
+      </div>
+  
+      <!-- Bouton de soumission -->
+      <button type="submit" class="auth-submit">Se connecter</button>
+    </form>
+  </main>
+  

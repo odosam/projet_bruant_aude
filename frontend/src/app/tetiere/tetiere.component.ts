@@ -21,29 +21,26 @@ export class TetiereComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Vérifier si le token existe dans localStorage
-    const token = localStorage.getItem('token');
-    this.isAuthenticated = !!token; // Si le token existe, l'utilisateur est connecté
+    
   }
 
   getItemCount(itemCount: number | null): number {
     return itemCount ?? 0;
   }
 
-  // Méthode pour naviguer vers le profil
+
   goToProfile() {
-    this.router.navigate(['/profil']);
+    const token = localStorage.getItem('accessToken');
+    if (!token || token === 'undefined' || token === 'null') {
+      this.router.navigate(['/connexion']);
+    } else {
+      this.router.navigate(['/profil']);
+    }
   }
 
-  // Méthode pour naviguer vers la page de connexion
-  goToLogin() {
-    this.router.navigate(['/connexion']);
-  }
-
-  // Méthode pour se déconnecter
   logout() {
-    localStorage.removeItem('token'); // Supprimer le token de localStorage
-    this.isAuthenticated = false; // Mettre à jour l'état de la connexion
-    this.router.navigate(['/connexion']); // Rediriger vers la page de connexion
+    localStorage.removeItem('token'); 
+    this.isAuthenticated = false; 
+    this.router.navigate(['/connexion']); 
   }
 }

@@ -1,101 +1,103 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Store } from '@ngxs/store';
-import { UpdateUsername } from '../actions/user.actions';
-import { UserState } from '../states/user.states';
-
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {authResponse} from './authResponse';
 
 @Component({
   selector: 'app-auth',
-  imports: [CommonModule, FormsModule,RouterModule, RouterLink],
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
+  providers: [ApiService],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css'
 })
-export class AuthComponent implements OnInit{
+export class AuthComponent {
+  loginUserForm = new FormGroup({
+    loginControl: new FormControl(''),
+    passwordControl: new FormControl(''),
+  });
 
-  password = '';
-  username = '';
-  isRegisterMode = false;
-  isAuthenticated = false;
-  displayUsername$: Observable<string>;
+  errorMessage: string = localStorage.getItem('errorMessage') || '';
+  alreadySubmitted: boolean = false;
 
-  ngOnInit(): void {
-    // Check if the user is already authenticated
-    const accessToken = localStorage.getItem('accessToken');
+  constructor(private fb: FormBuilder, private apiService: ApiService, private router : Router) {}
 
-    if (accessToken) {
-        this.apiService.getCurrentUser().subscribe(
-            (user: any) => {
-                this.isAuthenticated = true;
-                this.store.dispatch(new UpdateUsername(user.username));
-            },
-            (error) => {
-                console.error('Error loading user info:', error)
-            }
-        );
+  ngOnInit() {
+    this.loginUserForm = this.fb.group({
+      loginControl: ['', [Validators.required]],
+      passwordControl: ['', [Validators.required]],
+    });
+  }
+
+  protected getErrors(name: string) : string {
+    if (this.loginUserForm != undefined){
+      return this.validateTitleControl(this.getControlName(this.loginUserForm, name), this.alreadySubmitted);
     }
-}
+    return "never acces normalement";
+  };
 
-constructor(private apiService: ApiService, private store: Store) {
-    this.displayUsername$ = this.store.select(UserState.getUsername);
-}
-
-toggleMode() {
-    this.isRegisterMode = !this.isRegisterMode;
-}
-
-authenticate() {
-    
-    if (this.isRegisterMode) {
-        this.apiService.register( this.username, this.password).subscribe(
-            (response) => {
-                console.log('Registered:', response);
-                alert('Registration successful! Please log in.');
-                this.toggleMode();
-            },
-            (error) => console.error('Error:', error)
-        );
+  submitForm() {
+    this.errorMessage = '';
+    localStorage.removeItem('errorMessage');
+    this.alreadySubmitted = true;
+    if (!this.loginUserForm?.valid) {
+      this.errorMessage = 'Veuillez remplir correctement tous les champs.';
+      return;
     }
-    else {
-        this.apiService.login( this.username, this.password).subscribe(
-            (response: any) => {
-                console.log('Logged in:', response);
-                this.isAuthenticated = true;
-                console.log('User username:', response.username);
-                this.store.dispatch(new UpdateUsername(response.username));
-                // put the access token in the local storage
-                localStorage.setItem('accessToken', response.tokens.accessToken);
-            },
-            (error) => {
-                console.error('Error:', error);
-                switch (error.status) {
-                    case 401:
-                        alert('Email or password incorrect');
-                        break;
-                    default:
-                        alert('An error occurred, probably a charly error');
-                }
-            }
-        );
+
+    const { loginControl, passwordControl } = this.loginUserForm?.value;
+
+    if (loginControl && passwordControl){
+      this.apiService.loginClient(loginControl, passwordControl).subscribe(
+        (res: authResponse) => {
+          this.loginUserForm.reset();
+          localStorage.setItem('accessToken', res.accessToken.accessToken);
+          console.log(res);
+          this.router.navigate(['/profil']);
+        },
+        (err) => {
+          this.errorMessage = err.error;
+          console.error(err);
+        }
+      );
     }
-    
-}
+  }
+  
+  validateTitleControl(titleControl: FormControl | undefined, alreadySubmitted: boolean): string {
+    if (titleControl != undefined) {
+      if(titleControl.errors?.['passwordsMismatch']) {
+        return 'Les mots de passe ne correspondent pas';
+      }
+  
+      if (titleControl.errors && (titleControl?.touched  || alreadySubmitted)) {
+        if (titleControl.errors?.['required']) {
+          return 'Le champ est obligatoire';
+        }
+  
+        if (titleControl.errors?.['minlength']) {
+          return `Le champ doit contenir au moins ${titleControl.errors['minlength'].requiredLength} caractères`;
+        }
+        if (titleControl.errors?.['maxlength']) {
+          return `Le champ doit contenir au plus ${titleControl.errors['maxlength'].requiredLength} caractères`;
+        }
+  
+        if(titleControl.errors?.['email']) {
+          return 'Le champ doit être une adresse email valide';
+        }
+  
+        if (titleControl.errors?.['pattern']) {
+          return 'Le champ ne respecte pas le format attendu';
+        }
+  
+        return 'Erreur non répertoriée';
+      }
+    }
+    return '';
+  }
 
-logout() {
-    this.isAuthenticated = false;
-    this.password = '';
-    this.username = '';
-    this.store.dispatch(new UpdateUsername(''));
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    alert('You have been logged out.');
-}
-
-
-
-
+  getControlName(formGroup: FormGroup, name: string): FormControl {
+    return formGroup.get(name) as FormControl;
+  }
 }
