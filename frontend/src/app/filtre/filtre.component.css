@@ -1,32 +1,29 @@
-/* Conteneur des champs de recherche */
 .search-container {
     display: flex;
-    justify-content: center; /* Aligne les champs au centre */
-    gap: 20px; /* Espacement entre les champs */
-    margin: 20px; /* Espacement général */
+    justify-content: center;
+    gap: 20px; 
+    margin: 20px; 
     margin-top: 35px;
-    flex-wrap: wrap; /* Permet de s'adapter aux petits écrans */
+    flex-wrap: wrap; 
   }
   
-  /* Label des champs */
+
   label {
     display: flex;
-    flex-direction: column; /* Met le texte et l'input en colonne */
+    flex-direction: column;
     width: 250px; 
     font-family: 'Arial', sans-serif;
     font-size: 14px;
     color: #dcd6f7; 
   }
   
-  /* Texte des labels */
   label span {
-    margin-bottom: 8px; /* Espacement entre le texte et l'input */
+    margin-bottom: 8px; 
     color: #d5d4d6; 
     font-weight: bold;
     font-size: 15px;
   }
   
-  /* Champ de saisie */
   input {
     padding: 8px; 
     font-size: 14px; 
@@ -36,27 +33,24 @@
     color: #dcd6f7; 
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  /* Effets au focus */
+
   input:focus {
-    outline: none; /* Retire la bordure par défaut */
-    border-color: #e0b3ff; /* Bordure violet clair */
-    box-shadow: 0 0 5px #e0b3ff; /* Glow violet autour du champ */
-    background-color: black; /* Fond légèrement éclairci */
+    outline: none; 
+    border-color: #e0b3ff; 
+    box-shadow: 0 0 5px #e0b3ff; 
+    background-color: black; 
   }
   
-  /* Effets au survol */
   input:hover {
-    border-color: #9a67ea; /* Bordure violet intermédiaire */
+    border-color: #9a67ea; 
   }
   
-  /* Responsivité pour les petits écrans */
   @media (max-width: 768px) {
     label {
-      width: 100%; /* Les labels occupent toute la largeur */
+      width: 100%; 
     }
     .search-container {
-      gap: 15px; /* Réduction de l'espacement pour les petits écrans */
+      gap: 15px; 
     }
   }
   

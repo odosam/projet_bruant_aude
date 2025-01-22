@@ -1,4 +1,4 @@
-let rootUrl = 'http://localhost:3000/'
+let rootUrl = 'https://cnamapps.onrender.com/'
 
 export const environment = {
     production: false,

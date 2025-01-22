@@ -1,44 +1,48 @@
 <main class="auth-container">
-    <!-- Affichage des erreurs globales -->
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
+  <!-- Affichage des erreurs globales -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <form [formGroup]="loginUserForm" (ngSubmit)="submitForm()" novalidate class="auth-form">
+    <h2>Connexion</h2>
+
+    <!-- Champ de login -->
+    <div class="form-group">
+      <label for="loginControl">Nom d'utilisateur</label>
+      <input
+        id="loginControl"
+        type="text"
+        formControlName="loginControl"
+        placeholder="Entrez votre nom d'utilisateur"
+        [class.invalid]="getControlName(loginUserForm, 'loginControl').invalid && alreadySubmitted"
+      />
+      <small class="error-text" *ngIf="getErrors('loginControl')">
+        {{ getErrors('loginControl') }}
+      </small>
     </div>
-  
-    <form [formGroup]="loginUserForm" (ngSubmit)="submitForm()" novalidate class="auth-form">
-      <h2>Connexion</h2>
-  
-      <!-- Champ de login -->
-      <div class="form-group">
-        <label for="loginControl">Nom d'utilisateur</label>
-        <input
-          id="loginControl"
-          type="text"
-          formControlName="loginControl"
-          placeholder="Entrez votre nom d'utilisateur"
-          [class.invalid]="getControlName(loginUserForm, 'loginControl').invalid && alreadySubmitted"
-        />
-        <small class="error-text" *ngIf="getErrors('loginControl')">
-          {{ getErrors('loginControl') }}
-        </small>
-      </div>
-  
-      <!-- Champ de mot de passe -->
-      <div class="form-group">
-        <label for="passwordControl">Mot de passe</label>
-        <input
-          id="passwordControl"
-          type="password"
-          formControlName="passwordControl"
-          placeholder="Entrez votre mot de passe"
-          [class.invalid]="getControlName(loginUserForm, 'passwordControl').invalid && alreadySubmitted"
-        />
-        <small class="error-text" *ngIf="getErrors('passwordControl')">
-          {{ getErrors('passwordControl') }}
-        </small>
-      </div>
-  
-      <!-- Bouton de soumission -->
-      <button type="submit" class="auth-submit">Se connecter</button>
-    </form>
-  </main>
-  
+
+    <!-- Champ de mot de passe -->
+    <div class="form-group">
+      <label for="passwordControl">Mot de passe</label>
+      <input
+        id="passwordControl"
+        type="password"
+        formControlName="passwordControl"
+        placeholder="Entrez votre mot de passe"
+        [class.invalid]="getControlName(loginUserForm, 'passwordControl').invalid && alreadySubmitted"
+      />
+      <small class="error-text" *ngIf="getErrors('passwordControl')">
+        {{ getErrors('passwordControl') }}
+      </small>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button type="submit" class="auth-submit">Se connecter</button>
+
+    <!-- Lien vers la page d'inscription -->
+    <p class="register-text">
+      Vous n'avez pas de compte ? <a routerLink="/inscription">Inscrivez-vous ici</a>
+    </p>
+  </form>
+</main>

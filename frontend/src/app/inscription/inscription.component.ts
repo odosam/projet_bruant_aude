@@ -10,32 +10,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent {
-  prenom: string = '';
-  nom: string = '';
-  telephone: string = '';
-  email: string = '';
+  username: string = '';
   pwd: string = '';
   confirmPwd: string = ''; 
   errorTxt: string = '';
   IsDiplay: boolean = false;
 
   check(): void {
-    if (!this.prenom.trim()) {
-      this.errorTxt = "Veuillez saisir un prénom.";
-      return;
-    }
-    if (!this.nom.trim()) {
-      this.errorTxt = "Veuillez saisir un nom.";
-      return;
-    }
-    if (!this.telephone.trim()) {
-      this.errorTxt = "Veuillez saisir un numéro de téléphone.";
-      return;
-    }
-    if (!this.email.trim()) {
-      this.errorTxt = "Veuillez saisir un email.";
-      return;
-    }
+
+    
     if (!this.pwd.trim()) {
       this.errorTxt = "Veuillez saisir un mot de passe.";
       return;
@@ -53,20 +36,14 @@ export class InscriptionComponent {
     this.IsDiplay = true;
 
     console.log('Utilisateur inscrit :', {
-      prenom: this.prenom,
-      nom: this.nom,
-      telephone: this.telephone,
-      email: this.email
+      username: this.username
     });
 
     this.resetForm();
   }
 
   resetForm(): void {
-    this.prenom = '';
-    this.nom = '';
-    this.telephone = '';
-    this.email = '';
+    this.username = '';
     this.pwd = '';
     this.confirmPwd = '';
     this.IsDiplay = false;

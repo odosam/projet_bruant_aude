@@ -35,7 +35,7 @@ export class ApiService {
     }
   
     public getCurrentUser(): Observable<any> {
-      return this.http.get<any>(environment.backendUser); 
+      return this.http.get<any>(environment.backendUser);
     }
   
     public updateUser(updatedUser: any): Observable<any> {

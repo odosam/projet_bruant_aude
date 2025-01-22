@@ -1,42 +1,30 @@
-/* Fond général du footer */
 .site-footer {
-    color: #b388ff;; /* Texte clair pour contraster */
+    color: #b388ff;
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
   }
   
-  /* Conteneur du footer */
   .footer-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
   }
-  
-  /* Section individuelle du footer */
-  /* .footer-section {
-    flex: 1;
-    max-width: 15%;
-    margin: 0 15px;
-  }
-   */
-  /* Titres des sections */
+
   .footer-section h3 {
     font-size: 18px;
     margin-bottom: 10px;
-    color: rgba(255, 255, 255, 0.822); /* Rose pastel accentué */
-    border-bottom: 2px solid #7c4dff; /* Légère ligne décorative */
+    color: rgba(255, 255, 255, 0.822); 
+    border-bottom: 2px solid #7c4dff;
     display: inline-block;
     padding-bottom: 5px;
   }
   
-  /* Texte */
   .footer-section p {
     font-size: 14px;
     line-height: 1.6;
   }
   
-  /* Liens */
   .footer-section a {
     color: rgba(255, 255, 255, 0.822);
     text-decoration: none;
@@ -47,7 +35,6 @@
     color: #ddb1fa;
   }
   
-  /* Liste des liens sociaux */
   .social-links {
     list-style: none;
     padding: 0;
@@ -57,7 +44,6 @@
     margin: 5px 0;
   }
   
-  /* Bas du footer */
   .footer-bottom {
     text-align: center;
     font-size: 14px;

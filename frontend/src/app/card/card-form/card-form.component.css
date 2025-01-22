@@ -1,52 +1,195 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
+.card-form-container {
+    background-color: #1c1c28; 
+    color: #dcd6f7; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 600px;
-}
-
-h2{
-    font-size: x-large;
-}
-
-form {
-    border: 1px solid #7c4dff4b;    
-    border-radius: 5px;
-    padding: 20px;
-}
-
-label {
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
+    margin: 30px auto;
     border: 1px solid #7c4dff4b;
-    background-color: black;
+  }
+  
+  .card-form-container h2 {
+    font-size: 28px;
+    color: #b388ff; 
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #b388ff; 
+  }
+  
+  .card-form input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #7c4dff4b;
     border-radius: 5px;
-}
-
-input:focus {
+    background-color: black;
+    color: #dcd6f7;
+    transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-form input:focus {
     outline: none;
-    border-color: #e0b3ff;
+    border-color: #e0b3ff; 
     box-shadow: 0 0 5px #e0b3ff;
   }
-
-button {
-    padding: 10px;
-    background-color: #7c4dff;
-    color: white;
+  
+  .card-form input:hover {
+    border-color: #9a67ea; 
+  }
+  
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+    margin-top: 20px; 
+  }
+  
+  .btn-submit, .btn-reset {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase; 
+  }
+  
+  
+.form-actions {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Boutons eux-mêmes */
+  .btn-submit, .btn-reset {
+    padding: 15px;
+    font-size: 15px;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  button:hover {
-    background-color: #9a67ea;
-  }
 
- 
+.form-actions {
+    display: flex;
+    justify-content: space-between; /* Espace égal entre les boutons */
+    gap: 20px; /* Espacement supplémentaire entre les boutons */
+    margin-top: 20px; /* Espace supplémentaire au-dessus des boutons */
+  }
+  
+.btn-submit, .btn-reset {
+    padding: 12px 20px;
+    font-size: 16px; 
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .btn-submit {
+    background-color: #6c63ff; 
+    color: #fff;
+  }
+  
+  .btn-reset {
+    background-color: #e74c3c; 
+    color: #fff;
+  }
+  
+  
+  .btn-submit:hover {
+    background-color: #574dcb; 
+    transform: scale(1.05);
+  }
+  
+  .btn-reset:hover {
+    background-color: #c0392b;
+    transform: scale(1.05); 
+  }
+  
+  /* Effet de focus pour les boutons */
+  .btn-submit:focus, .btn-reset:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 63, 255, 0.6); /* Effet de halo autour du bouton */
+  }
+  
+  /* Ajout de légère ombre pour un effet de profondeur */
+  .btn-submit, .btn-reset {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  }
+  
+  /* Adaptabilité pour petits écrans */
+  @media (max-width: 768px) {
+    .btn-submit, .btn-reset {
+      font-size: 14px; /* Police plus petite sur petits écrans */
+      padding: 10px 18px; /* Boutons plus compacts */
+    }
+  }
+  
+  
+  /* Adaptabilité pour les petits écrans */
+  @media (max-width: 768px) {
+    .btn-submit, .btn-reset {
+      font-size: 16px; /* Police plus petite sur petits écrans */
+      padding: 12px; /* Boutons plus compacts */
+    }
+  }
+  
+  
+  /* Adaptabilité pour les petits écrans */
+  @media (max-width: 768px) {
+    .btn-submit, .btn-reset {
+      font-size: 16px; /* Police plus petite sur petits écrans */
+      padding: 12px; /* Boutons plus compacts */
+    }
+  }
+  
+  
+  /* Adaptabilité pour petits écrans */
+  @media (max-width: 768px) {
+    .btn-submit, .btn-reset {
+      font-size: 14px; /* Police plus petite sur petits écrans */
+      padding: 10px 18px; /* Boutons plus compacts */
+    }
+  }
+  
+  /* Adaptabilité pour les petits écrans */
+  @media (max-width: 768px) {
+    .card-form-container {
+      padding: 15px;
+    }
+  
+    .card-form input {
+      font-size: 14px;
+    }
+  
+    .btn-submit, .btn-reset {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+  

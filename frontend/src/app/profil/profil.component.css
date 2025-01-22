@@ -5,14 +5,75 @@ main {
   padding: 20px;
   border: 1px solid #7c4dff4b;
   border-radius: 10px;
-  color: #dcd6f7; /* Texte pastel */
+  color: #dcd6f7; 
 }
+
+/* Conteneur du profil utilisateur */
+.profile-container {
+  background-color: black;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+/* Titre */
+h1 {
+  text-align: center;
+  color: #b388ff;
+  margin-bottom: 30px;
+}
+
+/* Formulaire du profil */
+.profile-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label pour l'username */
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b388ff;
+}
+
+/* Champ de texte désactivé */
+input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #7c4dff4b;
+  border-radius: 5px;
+  background-color: #2e2e2e;
+  color: #dcd6f7;
+  cursor: not-allowed; /* Rendre le champ désactivé */
+}
+
+/* Bouton de modification */
+.edit-btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+.edit-btn:hover {
+  background-color: #574dcb;
+}
+
 
 /* Titre principal */
 h2, h3 {
   font-size: 24px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 10px;
   color: #b388ff;
 }
 
@@ -34,7 +95,7 @@ a {
 .card-section {
   margin-top: 20px;
   padding: 15px;
-  background-color: #1e1e2f; /* Fond sombre */
+  background-color: #1e1e2f;
   border: 1px solid #7c4dff4b;
   border-radius: 8px;
 }
@@ -44,9 +105,9 @@ a {
   margin-top: 15px;
   padding: 10px;
   border: 1px solid #7c4dff4b;
-  background-color: black; /* Fond sombre pour les cartes */
+  background-color: black; 
   border-radius: 6px;
-  color: #dcd6f7; /* Texte pastel */
+  color: #dcd6f7;
 }
 
 /* Boutons */
@@ -75,7 +136,7 @@ label {
 }
 
 label span {
-  margin-bottom: 8px; /* Espacement entre le texte et l'input */
+  margin-bottom: 8px; 
   color: #d5d4d6;
   font-weight: bold;
   font-size: 15px;
@@ -94,23 +155,33 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #e0b3ff; /* Couleur principale au focus */
+  border-color: #e0b3ff; 
   box-shadow: 0 0 5px #e0b3ff;
 }
 
-
-/* Boutons spécifiques */
-.card-btn {
-  margin-top: 10px;
-  background-color: #7c4dff;
-  color: #ffffff;
-  font-size: 14px;
-  padding: 8px 12px;
+/* Boutons de modification et d'annulation */
+.btn-changes {
+  padding: 6px 12px; /* Réduit la taille du padding pour un bouton plus petit */
+  font-size: 14px; /* Réduit la taille du texte */
+  font-weight: bold;
+  color: #fff;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 5px; /* Bordures arrondies */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto; /* Ne prend que l'espace nécessaire */
+  display: inline-block; /* Ne prend pas toute la largeur */
+  margin-right: 10px; /* Espacement entre les boutons */
 }
 
-.card-btn:hover {
-  background-color: #9a67ea;
+/* Effet au survol des boutons */
+.btn-changes:hover {
+  background-color: #574dcb; /* Couleur plus sombre au survol */
 }
+
+
+
 
 /* Responsive */
 @media (max-width: 600px) {

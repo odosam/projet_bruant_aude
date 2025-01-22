@@ -2,7 +2,6 @@
     <h2>Ajouter une carte</h2>
   
     <form (ngSubmit)="addCard()" class="card-form">
-      <!-- Nom de la carte -->
       <div class="form-group">
         <label for="cardName">Nom :</label>
         <input
@@ -15,7 +14,6 @@
         />
       </div>
   
-      <!-- Numéro de la carte -->
       <div class="form-group">
         <label for="cardCode">Numero de carte:</label>
         <input
@@ -29,7 +27,6 @@
         />
       </div>
   
-      <!-- Code CCV -->
       <div class="form-group">
         <label for="cardCcv">CCV:</label>
         <input
@@ -43,7 +40,6 @@
         />
       </div>
   
-      <!-- Expiration -->
       <div class="form-group">
         <label for="cardExpiry">Date d'expiration:</label>
         <input
@@ -55,7 +51,6 @@
         />
       </div>
   
-      <!-- Boutons -->
       <div class="form-actions">
         <button type="submit" class="btn-submit">Ajouter</button>
         <button type="button" class="btn-reset" (click)="resetForm()">Reset</button>

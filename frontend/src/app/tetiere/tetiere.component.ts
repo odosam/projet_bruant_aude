@@ -31,6 +31,7 @@ export class TetiereComponent implements OnInit {
 
   goToProfile() {
     const token = localStorage.getItem('accessToken');
+    console.log(token);
     if (!token || token === 'undefined' || token === 'null') {
       this.router.navigate(['/connexion']);
     } else {

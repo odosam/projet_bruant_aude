@@ -15,7 +15,7 @@ const decodedAccessToken = (req, res) => {
 
   const token = authHeader.split(' ')[1];
   try {
-    return jwt.verify(token, ACCESS_TOKEN_SECRET);;
+    return jwt.verify(token, ACCESS_TOKEN_SECRET);
   } catch (err) {
     return res.status(403).json({ message: 'Invalid or expired token' });
   }
@@ -36,11 +36,6 @@ exports.get = (req, res) => {
   Utilisateurs.findOne({ where: { id: user.id } })
   .then(data => {
     if (data) {
-      const user = {
-        id: data.id,
-        login: data.login
-      };
-
       res.send(data);
     } else {
       res.status(404).send({
@@ -50,7 +45,7 @@ exports.get = (req, res) => {
   })
   .catch(err => {
     res.status(400).send({
-      message: "Error retrieving Utilisateur with login=" + utilisateur.login
+      message: "Error retrieving Utilisateur with login=" + user.login
     });
   });
 
